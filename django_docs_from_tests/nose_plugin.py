@@ -3,19 +3,20 @@ import os
 
 from nose.plugins import Plugin
 
-logger = logging.getLogger('nose.plugins.helloworld')
+logger = logging.getLogger('nose.plugins.django_docs_from_tests')
 
 
-class HelloWorld(Plugin):
+class DocsFromTests(Plugin):
     name = 'helloworld'
 
     def options(self, parser, env=os.environ):
-        super(HelloWorld, self).options(parser, env=env)
+        super(DocsFromTests, self).options(parser, env=env)
 
     def configure(self, options, conf):
-        super(HelloWorld, self).configure(options, conf)
+        super(DocsFromTests, self).configure(options, conf)
         if not self.enabled:
             return
 
     def finalize(self, result):
         logger.info('Hello pluginized world!')
+

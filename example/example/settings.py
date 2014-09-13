@@ -40,6 +40,7 @@ INSTALLED_APPS = (
 )
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+NOSE_PLUGINS = ['django_docs_from_tests.nose_plugin.DocsFromTests']
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
