@@ -1,3 +1,30 @@
+HTML_PREAMBLE = """"
+<html><head>
+<title>Test output</title>
+</head><body>
+"""
+
+HTML_CLOSING = """
+</body>
+</html>
+"""
+
+
+class Report(object):
+    def __init__(self, name, description=None):
+        self.name = name
+        self.description = description
+        self.tests = []
+
+    def add(self, test):
+        self.tests.append(test)
+
+    @property
+    def body(self):
+        return '\n'.join(test.render() for test in self.tests)
+
+    def render(self):
+        return "{}{}{}".format(HTML_PREAMBLE, self.body, HTML_CLOSING)
 
 
 class TestResult(object):

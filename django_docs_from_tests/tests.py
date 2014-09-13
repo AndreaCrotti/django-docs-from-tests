@@ -10,4 +10,8 @@ class TestHtmlGeneration(TestCase):
         self.assertIn('test-name', html)
 
     def test_report_gen(self):
-        pass
+        test = docs_generator.TestResult('test-name')
+        gen = docs_generator.Report('sample report')
+        gen.add(test)
+        res = gen.render()
+        self.assertIn('test-name', res)

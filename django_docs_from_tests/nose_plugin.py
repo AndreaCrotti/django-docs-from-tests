@@ -11,9 +11,6 @@ class DocsFromTests(Plugin):
 
     def __init__(self):
         super(DocsFromTests, self).__init__()
-        # self.html = [ '<html><head>',
-        #               '<title>Test output</title>',
-        #               '</head><body>' ]
 
     def options(self, parser, env=os.environ):
         super(DocsFromTests, self).options(parser, env=env)
