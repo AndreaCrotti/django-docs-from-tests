@@ -2,9 +2,6 @@
 import os
 import sys
 
-# import nose
-# from django_docs_from_tests.nose_plugin import HelloWorld
-
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "example.settings")
 
