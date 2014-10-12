@@ -64,6 +64,7 @@ class Migration(migrations.Migration):
                 ('created', models.DateTimeField(default=datetime.datetime.utcnow)),
                 ('docstring', models.TextField(null=True, blank=True)),
                 ('name', models.CharField(max_length=128)),
+                ('passed', models.BooleanField()),
                 ('calls', models.ManyToManyField(to='django_docs_from_tests.ApiCall')),
                 ('queries', models.ManyToManyField(to='django_docs_from_tests.Query')),
             ],

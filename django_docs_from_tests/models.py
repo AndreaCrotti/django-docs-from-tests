@@ -39,3 +39,5 @@ class TestReportResult(models.Model):
     docstring = models.TextField(null=True, blank=True)
     name = models.CharField(max_length=128)
     calls = models.ManyToManyField(ApiCall)
+    # TODO: did the test fail or pass?
+    passed = models.BooleanField()
