@@ -15,3 +15,11 @@ class TestHtmlGeneration(TestCase):
         gen.add(test)
         res = gen.render()
         self.assertIn('test-name', res)
+
+
+class ReportModelTest(TestCase):
+    pass
+
+
+class ResponseModelTest(TestCase):
+    pass

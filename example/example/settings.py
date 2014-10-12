@@ -37,10 +37,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_nose',
+    'django_docs_from_tests',
 )
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_PLUGINS = ['django_docs_from_tests.nose_plugin.DocsFromTests']
+NOSE_ARGS = ['-s', '-v']
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

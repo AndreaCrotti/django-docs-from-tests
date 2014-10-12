@@ -1,10 +1,11 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 package = 'django-nose-api-docs'
 version = '0.1'
 
 setup(
     name=package,
+    packages=find_packages('.'),
     version=version,
     description="Generate API documentation from integration tests",
     url='',
