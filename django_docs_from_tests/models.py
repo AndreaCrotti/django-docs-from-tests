@@ -4,7 +4,6 @@ from django.db import models
 
 
 class HttpCall(models.Model):
-    content = models.TextField()
     headers = models.CharField(max_length=1024)
 
     class Meta:
@@ -12,10 +11,13 @@ class HttpCall(models.Model):
 
 
 class Request(HttpCall):
-    pass
+    path = models.CharField(max_length=128)
+    # this should just be a choice instead, add some validation
+    method = models.CharField(max_length=20, default='GET')
 
 
 class Response(HttpCall):
+    content = models.TextField()
     status_code = models.IntegerField()
 
 
@@ -37,5 +39,3 @@ class TestReportResult(models.Model):
     docstring = models.TextField(null=True, blank=True)
     name = models.CharField(max_length=128)
     calls = models.ManyToManyField(ApiCall)
-
-

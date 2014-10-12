@@ -35,8 +35,9 @@ class Migration(migrations.Migration):
             name='Request',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('content', models.TextField()),
                 ('headers', models.CharField(max_length=1024)),
+                ('path', models.CharField(max_length=128)),
+                ('method', models.CharField(default=b'GET', max_length=20)),
             ],
             options={
                 'abstract': False,
@@ -47,8 +48,8 @@ class Migration(migrations.Migration):
             name='Response',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('content', models.TextField()),
                 ('headers', models.CharField(max_length=1024)),
+                ('content', models.TextField()),
                 ('status_code', models.IntegerField()),
             ],
             options={

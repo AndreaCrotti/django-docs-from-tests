@@ -42,7 +42,7 @@ INSTALLED_APPS = (
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_PLUGINS = ['django_docs_from_tests.nose_plugin.DocsFromTests']
-NOSE_ARGS = ['-s', '-v']
+NOSE_ARGS = ['-s']
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -52,6 +52,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_docs_from_tests.middleware.RecordingRequestMiddleware',
 )
 
 ROOT_URLCONF = 'example.urls'
